@@ -1,0 +1,19 @@
+image:
+  file: .gitpod.Dockerfile
+
+ports:
+  - port: 19000-19006
+    onOpen: ignore
+
+tasks:
+  - init: |
+      npm install -g expo-cli
+      npm install
+    command: |
+      expo start --no-dev-client --tunnel
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
